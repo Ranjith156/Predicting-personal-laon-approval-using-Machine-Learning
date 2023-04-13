@@ -12,7 +12,7 @@ scale = pickle.load(open(r'scale.pkl','rb'))
 
 @app.route('/') #rendering the html template
 def home():
-    return render_template('predict.html')
+    return render_template('home.html')
 
 @app.route('/predict',methods=["POST", "GET"]) #rendering the html
 def predict():
@@ -40,9 +40,9 @@ def submit():
     print(type(prediction))
     
     if (prediction == 0):
-        return render_template('predict.html', result="Loan will Not be Approved")
+        return render_template('new_predict.html', result="Loan will Not be Approved")
     else:
-        return render_template('predict.html', result = "Loan will be Approved")
+        return render_template('new_predict.html', result = "Loan will be Approved")
     
     
     
